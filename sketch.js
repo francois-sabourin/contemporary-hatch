@@ -22,12 +22,12 @@ function setup() {
   textFont('Times');
   let fontSize = 16;
   textSize(fontSize);
-  stickerWidth = textWidth("click anywhere to download timely hatch") + 20;
+  stickerWidth = textWidth("click anywhere to download a timely hatch") + 20;
   stickerHeight = textAscent()+textDescent()+10;
   sticker = createGraphics(stickerWidth, stickerHeight);
   sticker.textFont('Times');
   sticker.textSize(fontSize);
-  sticker.textWidth("click anywhere to download timely hatch")
+//  sticker.textWidth("click anywhere to download a timely hatch");
   sticker.textAlign(CENTER, CENTER);
 
 }
@@ -147,11 +147,14 @@ function stickerDisplay(stickerColour) {
 
   sticker.clear();
   sticker.fill(stickerColour);
+
+  //sticker.strokeWeight(1.5);
   sticker.stroke(255);
-  sticker.rect(0, 0, sticker.width, sticker.height);
+
+  sticker.rect(0, 0, sticker.width-1, sticker.height);
   sticker.noStroke();
   sticker.fill(200);
-  sticker.text("click anywhere to download timely hatch", sticker.width / 2, sticker.height / 2);
+  sticker.text("click anywhere to download a timely hatch", sticker.width / 2, sticker.height / 2);
   image(sticker, 10, height - sticker.height - 10);
 
 }
